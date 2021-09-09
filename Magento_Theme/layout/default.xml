@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="store_language" remove="true" />
+        <referenceBlock name="skip_to_content" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+
+        <referenceContainer name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header" >
+            <block class="Magento\Framework\View\Element\Template" name="header-top" before="-" template="Magento_Theme::header-top.phtml" />
+        </referenceContainer>
+        <referenceBlock name="header.links">
+                <block class="Magento\Cms\Block\Block" name="social" before='-'>
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">header-top-right-links</argument>
+                    </arguments>
+                </block>
+        </referenceBlock>
+        
+
+        <referenceContainer name="footer-container">
+            <container name="footer.showroom.container" as="footer-showroom" label="Page Footer" htmlTag="div" htmlClass="footer-showroom footer content">
+               <block class="Magento\Framework\View\Element\Template" name="footer.showroom.block" template="Magento_Theme::footer/showroom.phtml"/>
+            </container>
+
+            <container name="footer.banner.container" as="footer-top" label="Page Footer" htmlTag="div" htmlClass="footer-banner">
+                <block class="Magento\Cms\Block\Block" name="footer.banner" before='-'>
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-banner-content</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="footer.top.container" label="Page Footer" htmlTag="div" htmlClass="footer-top">
+                <block class="Magento\Cms\Block\Block" name="footer.top" before='-'>
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-top</argument>
+                    </arguments>
+                </block>
+            </container>
+           
+
+          <!-- <container name="footer.middle.container" as="footer-middle" label="Page Footer" htmlTag="div" htmlClass="footer-middle footer-middle-mobile">
+               <block class="Magento\Framework\View\Element\Template" name="footer.middle.block" template="Magento_Theme::footer/footer-middle.phtml"/>
+               <block class="Magento\Framework\View\Element\Template" name="footer.social.block" template="Magento_Theme::footer/footer-social.phtml"/>
+          </container> -->
+
+            <container name="footer.middle.desktop.container"  as="footer-middle-desktop" label="Page Footer" htmlTag="div" htmlClass="footer-middle footer-middle-desktop footer content">
+                <container name="footer.middle.content"  as="footer-middle-desktop" label="Page Footer" htmlTag="div" htmlClass="footer-middle-content">
+                    <block class="Magento\Framework\View\Element\Template" name="footer.middle.desktop.block" template="Magento_Theme::footer/footer-middle.phtml"/>
+                    <container name="footer.middle.newsletter"  as="footer-middle-desktop" label="Page Footer" htmlTag="div" htmlClass="footer-middle-item">
+                        <block class="Magento\Cms\Block\Block" name="footer.social.link" after='-'>
+                            <arguments>
+                                <argument name="block_id" xsi:type="string" translate="true">footer-social-icon</argument>
+                            </arguments>
+                        </block>
+                    </container>
+                </container>
+            </container>
+            <container name="footer.bottom.container" as="footer-bottom" label="Page Footer" htmlTag="div" htmlClass="footer-bottom footer content">
+                <block class="Magento\Cms\Block\Block" name="footer.bottom.copyright" before='-'>
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-copyright</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer.payment.method">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-payment-method</argument>
+                    </arguments>
+                </block>
+            </container>
+       </referenceContainer>
+
+        <move element="form.subscribe" destination="footer.middle.newsletter" before="footer.social.link"/>
+        <referenceContainer name="footer" remove="true"/>
+        <referenceBlock name="copyright" remove="true" />
+
+    </body>
+</page>
+
+

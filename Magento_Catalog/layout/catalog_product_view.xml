@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+    <body>
+       <referenceContainer name="product.info.stock.sku" remove="true" />
+       <referenceBlock name="product.info.review" remove="true" />
+       <referenceContainer name="product.info.social" remove="true" />
+
+       <referenceContainer name="product.info.media">
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attribute.info" template="Magento_Catalog::product/view/label.phtml" />
+       </referenceContainer>
+
+        <referenceBlock name="product.info.details">
+            <!-- <referenceBlock name="product.info.description" remove="true" /> -->
+            <referenceBlock name="reviews.tab" remove="true" />
+            <referenceBlock name="product.review.form" remove="true" />
+
+            <block class="Magento\Catalog\Block\Product\View" name="product.info.desciption.block" template="Magento_Catalog::product/description.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Description</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View" name="care.warranty" template="Magento_Catalog::product/warranty.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Care &amp; warranty</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View" name="shipping.delivery" template="Magento_Catalog::product/delivery.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">shipping &amp; delivery</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="installation.requirements" template="Magento_Catalog::product/installation.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Installation Requirements </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+            
+    </body>
+</page>
