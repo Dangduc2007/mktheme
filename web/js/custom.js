@@ -41,6 +41,32 @@ require([
             }]
         });
 
+        $('.menu-center-mobile').slick({
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+        });
+
+        $('.title-slider').slick({
+            dots: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+        
+
         $('.slider-wrap').slick({
             dots: false,
             slidesToShow: 1,

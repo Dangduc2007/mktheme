@@ -734,6 +734,29 @@
         position: relative;
     }
 
+    .header {
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            font-size: 10px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid @color-border-input;
+            > span {
+                position: relative;
+                height: auto;
+                height: auto;
+                width: auto;
+                overflow: inherit;
+                clip: inherit;
+                text-align: center;
+            }
+            &:before {
+                color: @color222;
+            }
+        }
+    }
+
     .page-header {
         border: none;
         .header.content {
@@ -754,10 +777,17 @@
             display: none;
         }
         .header-top-mobile-left {
-            width: 60%;
+            width: 50%;
+            .menu-center-mobile {
+                margin-bottom: 0;
+                padding-left: 0;
+                li {
+                    line-height: 36px;
+                }
+            }
         }
         .header-top-mobile-right {
-            width: 40%;
+            width: 50%;
             text-align: right;
         }
 
@@ -852,6 +882,18 @@
 
         &:last-child {
             order: 1;
+            text-align: center;
+            .sub-title {
+                padding: 0 50px;
+            }
+
+            > p {
+                > a{
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
         }
 
         .trigger-btn {
@@ -964,8 +1006,8 @@
 
 
         .header.panel:extend(.abs-add-clearfix-desktop all) {
-            padding-bottom: @indent__s;
-            padding-top: @indent__s;
+            padding-bottom: 6px;
+            padding-top: 7px;
         }
 
         .switcher {
@@ -979,6 +1021,9 @@
         display: flex;
         .header-top-desktop-left {
             width: 20%;
+            p {
+                margin-bottom: 0;
+            }
             
         }
         .header-top-desktop-center {

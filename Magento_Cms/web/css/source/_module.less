@@ -32,6 +32,7 @@
 // Slider top
     .slider-wrap {
         width: 100%;
+        margin-bottom: 15px;
 
     }
     .slider-items {
@@ -79,8 +80,17 @@
                     color: @color-white;
                     margin-left: 8px;
                 }
+                &:hover {
+                   text-decoration: underline;
+                }
             }
         }
+    }
+
+    // Banner Top
+
+    .banner-top-wrapper {
+        margin-bottom: 15px;
     }
 
     .banner-top-content {
@@ -130,8 +140,52 @@
                     color: @color-white;
                     margin-left: 8px;
                 }
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
         }
+    }
+
+    // Slider title
+    .title-slider {
+        background: @color-button-banner;
+        margin-bottom: 20px;
+        .item {
+            text-align: center;
+            &:after {
+                content: '';
+                height: 12px;
+                width: 1px;
+                color: #47474b;
+            }
+
+            a {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: @color-white;
+                line-height: 14px;
+                display: block;
+                padding: 13px;
+                &:after {
+                    content:'\f054';
+                    font-family: 'Font Awesome';
+                    font-size: 12px;
+                    color: @color-white;
+                    margin-left: 8px;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    // Banner Middle
+    .banner-middle {
+        margin-bottom: 20px;
     }
 
     .banner-middle-content {
@@ -184,6 +238,9 @@
                     color: @color-button-banner;
                     margin-left: 10px;
                 }
+                &:hover {
+                    text-decoration: underline;
+                 }
             }
         }
     }
@@ -215,7 +272,7 @@
 
             }
 
-            a {
+            a{
                 font-size: 15px;
                 color: @color-white;
                 padding: 14px 35px 14px 24px;
